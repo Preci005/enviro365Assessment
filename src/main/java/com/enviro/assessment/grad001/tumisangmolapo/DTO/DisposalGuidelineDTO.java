@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class DisposalGuidelineDTO {
+public class DisposalGuidelineDTO extends BaseDTO{
 
     @NotBlank(message = "Title is required")
     @Size(max = 255, message = "Title must not exceed 255 characters")
@@ -22,4 +22,28 @@ public class DisposalGuidelineDTO {
 
     @NotNull(message = "Waste Category ID is required")
     private Long wasteCategoryId;
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getGuideline() {
+        return guideline;
+    }
+
+    public void setGuideline(String guideline) {
+        this.guideline = guideline;
+    }
+
+    public Long getWasteCategoryId() {
+        return wasteCategoryId;
+    }
+
+    public void setWasteCategoryId(Long wasteCategoryId) {
+        this.wasteCategoryId = wasteCategoryId;
+    }
 }
